@@ -13,4 +13,4 @@ JOIN Customer ON Employee.EmployeeId = Customer.SupportRepId
 JOIN Invoice ON Customer.CustomerId = Invoice.CustomerId
 GROUP BY "Sales Agent"
 ORDER BY Invoice.Total DESC
-LIMIT 1
+LIMIT 1;
