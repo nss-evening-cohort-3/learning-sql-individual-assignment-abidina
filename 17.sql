@@ -1,2 +1,3 @@
-17. Provide a query that shows all Invoices but includes the # of invoice line items.
-
+SELECT InvoiceId AS 'Invoice ID', 
+COUNT (*) AS 'Invoice Line Count' FROM InvoiceLine 
+GROUP BY InvoiceId;
