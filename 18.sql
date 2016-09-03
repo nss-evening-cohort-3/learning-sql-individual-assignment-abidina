@@ -1,1 +1,5 @@
-18. Provide a query that shows total sales made by each sales agent.
+SELECT Employee.FirstName || ' ' || Employee.LastName AS 'Sales Agent', 
+  (SELECT ROUND(SUM(Invoice.Total), 2)) AS 'Total Sales' FROM Invoice
+JOIN Customer ON Invoice.CustomerId = Customer.CustomerId
+JOIN Employee ON Customer.SupportRepId = Employee.EmployeeId
+GROUP BY Employee.EmployeeId;
